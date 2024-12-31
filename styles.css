@@ -1,0 +1,217 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+header {
+    background: white;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #666;
+}
+
+main {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.photo-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+}
+
+.photo-container {
+    position: relative;
+}
+
+.photo {
+    width: 100%;
+    height: 300px;
+    background-color: #eee;
+    /* 当添加实际图片时，使用以下属性 */
+    background-size: cover;
+    background-position: center;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    background: white;
+    margin-top: 2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+}
+
+/* 添加图片时的使用方法 */
+/* 
+.photo {
+    background-image: url('path/to/your/image.jpg');
+}
+*/ 
+
+/* 添加按钮样式 */
+.add-card {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.add-card:hover {
+    background: white;
+    transform: translateY(-5px);
+}
+
+.add-button {
+    text-align: center;
+    color: #666;
+}
+
+.add-button .plus {
+    display: block;
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.add-button .add-text {
+    font-size: 1.1rem;
+}
+
+/* 确保添加卡片和照片卡片高度一致 */
+.add-card {
+    min-height: 300px;
+}
+
+/* 添加删除按钮样式 */
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-container:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    background: white;
+    color: #ff4444;
+}
+
+/* 添加保存提示样式 */
+.save-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease;
+    z-index: 1000;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.save-notification.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+} 

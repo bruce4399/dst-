@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摄影集</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>摄影集</h1>
+        <nav>
+            <ul>
+                <li><a href="#all">全部</a></li>
+                <li><a href="#custom1" class="custom-category" onclick="editCategory(event)">+</a></li>
+                <li><a href="#custom2" class="custom-category" onclick="editCategory(event)">+</a></li>
+                <li><a href="#custom3" class="custom-category" onclick="editCategory(event)">+</a></li>
+                <li><a href="#custom4" class="custom-category" onclick="editCategory(event)">+</a></li>
+                <li><a href="#custom5" class="custom-category" onclick="editCategory(event)">+</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <div class="photo-card add-card">
+                <div class="add-button">
+                    <span class="plus">+</span>
+                    <span class="add-text">添加照片</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 戴舒涛. 保留所有权利</p>
+    </footer>
+
+    <input type="file" id="photoInput" accept="image/*" style="display: none;">
+</body>
+</html> 
